@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><config>
+  <kiosk>
+    <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
+  </kiosk>
+  <applications>
+    <application label="Máy tính" package="com.android.calculator2" activity="com.android.calculator2.Calculator"/>
+    <application label="Velocity" package="com.wavelink.velocity" activity="com.wavelink.velocity.te.SplashActivity"/>
+    <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
+    <application label="StageNow" package="com.symbol.tool.stagenow" activity="com.symbol.tool.stagenow.main.HomeScreen"/>
+	<application label="SmartClock" package="com.congit.simplewebbrowser" activity="com.congit.simplewebbrowser.MainActivity"/>
+  </applications>
+  <tools>
+    <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
+  </tools>
+  <passwords>
+    <admin attempts="1">FUK4o6cHW01PsHS9fkDHxlefd6KjCpP2fOa+CwiX5q4=kklSsjewEL9IbGaif1WFlsdZxn+w8Vvwn+zfmlQQVZA=</admin>
+  </passwords>
+  <user_options>
+    <icon_settings>
+      <app_icon_size>XL</app_icon_size>
+    </icon_settings>
+  </user_options>
+  <preferences>
+    <orientation/>
+    <wallpaper/>
+    <usb_debugging_disabled>1</usb_debugging_disabled>
+    <icon_label_text_color>#FFFFFFFF</icon_label_text_color>
+    <auto_launch_enable>0</auto_launch_enable>
+    <service_auto_launch_enable>0</service_auto_launch_enable>
+    <keyguard_search_disabled>1</keyguard_search_disabled>
+    <system_settings_restricted>1</system_settings_restricted>
+    <icon_label_background_color>#00FFFFFF</icon_label_background_color>
+    <keyguard_camera_disabled>1</keyguard_camera_disabled>
+    <kiosk_mode_enabled>0</kiosk_mode_enabled>
+    <title>DBS.VP-2024</title>
+    <apps_disabled>
+      <application package="com.android.settings"/>
+      <application package="com.google.android.googlequicksearchbox"/>
+      <application package="com.android.chrome"/>
+      <application package="com.example.android.notepad"/>
+      <application package="com.google.android.youtube"/>
+	<application package="com.android.vending"/>
+	<application package="com.google.android.apps.docs"/>
+	<application package="com.google.android.googlequicksearchbox"/>
+<application package="com.google.android.email"/>
+<application package="com.google.android.apps.maps"/>
+<application package="com.google.android.photos"/>
+<application package="com.google.android.gms"/>
+    </apps_disabled>
+  </preferences>
+</config>
