@@ -21,12 +21,16 @@
     </icon_settings>
   </user_options>
   <preferences>
+	<admin_lock_out>
+        	<recovery_enabled>1</recovery_enabled > 
+		<recovery_timeout>15</recovery_timeout>
+    	</admin_lock_out>
     <orientation/>
     <wallpaper/>
     <usb_debugging_disabled>1</usb_debugging_disabled>
     <icon_label_text_color>#FFFFFFFF</icon_label_text_color>
     <auto_launch_enable>0</auto_launch_enable>
-	  <admin_max_attempts>1000</admin_max_attempts>
+	  <admin_max_attempts>100000</admin_max_attempts>
     <service_auto_launch_enable>0</service_auto_launch_enable>
     <keyguard_search_disabled>1</keyguard_search_disabled>
     <system_settings_restricted>1</system_settings_restricted>
@@ -46,7 +50,6 @@
 <application package="com.google.android.email"/>
 <application package="com.google.android.apps.maps"/>
 <application package="com.google.android.photos"/>
-<application package="com.google.android.gms"/>
     </apps_disabled>
   </preferences>
 </config>
