@@ -21,6 +21,10 @@
     </icon_settings>
   </user_options>
   <preferences>
+	<admin_lock_out>
+        	<recovery_enabled>1</recovery_enabled > 
+		<recovery_timeout>15</recovery_timeout>
+    	</admin_lock_out>
     <orientation/>
     <wallpaper/>
     <usb_debugging_disabled>1</usb_debugging_disabled>
