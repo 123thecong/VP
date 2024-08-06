@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    //연결
+
     private fun bindViews() {
         val simpleDateFormat = SimpleDateFormat("MM/yyyy")
         val simpleDateFormat2 = SimpleDateFormat("mm")
@@ -107,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                         // Nếu người dùng nhập pass giống thì tải URL rf.congit.online
                         webView.loadUrl("http://rf.congit.online")
                     }
+                    // Nếu người dùng nhập pass giống thì mở ứng dụng stagenow
                     loadingUrl.equals(pass6, ignoreCase = true) -> {
                         stagenow()
                     }
@@ -190,7 +191,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    //분기에 따라 웹뷰의 뒤로가기를 할지, 앱자체를 뒤로가기할지 결정
+
     override fun onBackPressed() {
         //뒤로 갈 수 있는지를 확인
         if(webView.canGoBack()){
@@ -200,7 +201,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //하드코딩하지 않고 이렇게 상수로 빼놓으면 수정사항이 생길때 상수만 바꿔주면 됨
+//Trang mặc định
     companion object {
         private const val DEFAULT_URL = "https://smartsuite.ap.signintra.com/matrix_re/change_workcode"
     }
