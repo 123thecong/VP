@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         val pass4 = "vaogoogle"
         val pass5 = "rf.congit.online"
         val pass6 = "stagenow"
+        val pass7 = "ngw"
         addressBar.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val loadingUrl = v.text.toString()
@@ -110,6 +111,10 @@ class MainActivity : AppCompatActivity() {
                     // Nếu người dùng nhập pass giống thì mở ứng dụng stagenow
                     loadingUrl.equals(pass6, ignoreCase = true) -> {
                         stagenow()
+                    }
+                    loadingUrl.equals(pass7, ignoreCase = true) -> {
+                        // Nếu người dùng nhập pass giống thì tải URL rf.congit.online
+                        webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
                     }
                     URLUtil.isNetworkUrl(loadingUrl) -> {
                         // Nếu URL hợp lệ, tải URL vào WebView
