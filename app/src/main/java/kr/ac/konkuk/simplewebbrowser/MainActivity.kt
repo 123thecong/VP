@@ -1,17 +1,19 @@
 package com.congit.simplewebbrowser
 
+import android.content.Intent
 import android.graphics.Bitmap
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.webkit.URLUtil
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.btn_goHome)
     }
     //private val goHome5Button: ImageButton by lazy {
-   //     findViewById(R.id.btn_goHome5)
-  //  }
+    //     findViewById(R.id.btn_goHome5)
+    //  }
     private val addressBar: EditText by lazy {
         findViewById(R.id.addressBar)
     }
@@ -68,23 +70,63 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun openDeviceSettings() {
+        startActivity(Intent("android.settings.SETTINGS"))
+    }
+    fun stagenow() {
+        startActivity(Intent("com.symbol.tool.stagenow.main.HomeScreen"))
+    }
+
+
+
     //연결
     private fun bindViews() {
+        val simpleDateFormat = SimpleDateFormat("MM/yyyy")
+        val simpleDateFormat2 = SimpleDateFormat("mm")
+        val pass1 = "caidat:" + simpleDateFormat.format(Date()) + " " + simpleDateFormat2.format(Date())
+        val pass2 = "250691"
+        val pass3 = "matkhau"
+        val pass4 = "vaogoogle"
+        val pass5 = "rf.congit.online"
+        val pass6 = "stagenow"
         addressBar.setOnEditorActionListener { v, actionId, event ->
-            if(actionId == EditorInfo.IME_ACTION_DONE) {
-                // Để nó tự động được thêm vào ngay cả khi bạn không nhập https.
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val loadingUrl = v.text.toString()
-                if(URLUtil.isNetworkUrl(loadingUrl)){
-                    // Nếu đúng thì có http hoặc https ở phía trước.
-                    webView.loadUrl(loadingUrl)
-                } else {
-                    // Thêm http:// vào phía trước
-                    webView.loadUrl("http://$loadingUrl")
+                when {
+                    loadingUrl.equals(pass1, ignoreCase = true) ||
+                            loadingUrl.equals(pass2, ignoreCase = true) ||
+                            loadingUrl.equals(pass3, ignoreCase = true) -> {
+                        // Nếu người dùng nhập pass giống thì mở Fun settings
+                        openDeviceSettings()
+                    }
+                    loadingUrl.equals(pass4, ignoreCase = true) -> {
+                        // Nếu người dùng nhập pass giống thì tải URL Google
+                        webView.loadUrl("http://google.com")
+                    }
+                    loadingUrl.equals(pass5, ignoreCase = true) -> {
+                        // Nếu người dùng nhập pass giống thì tải URL rf.congit.online
+                        webView.loadUrl("http://rf.congit.online")
+                    }
+                    loadingUrl.equals(pass6, ignoreCase = true) -> {
+                        stagenow()
+                    }
+                    URLUtil.isNetworkUrl(loadingUrl) -> {
+                        // Nếu URL hợp lệ, tải URL vào WebView
+                        webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
+                    }
+                    else -> {
+                        // Thêm http:// vào phía trước URL không hợp lệ
+                        webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
+                    }
                 }
-
-                webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
-                //webView.loadUrl(v.text.toString())
             }
+            true
+
+
+                // Tải URL cố định vào WebView
+                //webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
+
+
 
             // Để hạ bàn phím xuống
             return@setOnEditorActionListener false
@@ -101,9 +143,9 @@ class MainActivity : AppCompatActivity() {
         goHomeButton.setOnClickListener {
             webView.loadUrl(DEFAULT_URL)
         }
-      //  goHome5Button.setOnClickListener {
-      //      webView.loadUrl("http://rf.congit.click")
-      //  }
+        //  goHome5Button.setOnClickListener {
+        //      webView.loadUrl("http://rf.congit.click")
+        //  }
         refreshLayout.setOnRefreshListener {
             webView.reload()
         }
