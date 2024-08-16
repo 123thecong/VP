@@ -22,7 +22,7 @@
     </icon_settings>
   </user_options>
   <preferences>
-	  <pin_shortcuts>0</pin_shortcuts>
+	  <pin_shortcuts>1</pin_shortcuts>
 	<admin_lock_out>
         	<recovery_enabled>1</recovery_enabled > 
 		<recovery_timeout>15</recovery_timeout>
