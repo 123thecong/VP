@@ -2,20 +2,18 @@
   <kiosk>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
   </kiosk>
-	<applications>
-	<link label="chromium" pinned_activity="org.chromium.chrome"/>
-		<link label="chromium" pinned_activity="com.google.android.apps.chrome.Main"/>
-		  <link label="Zebra" url="https://www.zebra.com" package="org.chromium.chrome" activity="com.google.android.apps.chrome.Main" icon="/enterprise/usr/ZebraLogo.jpg" />
-	</applications>
 
-  <applications>
-    
+<applications>
+    <!-- Phần này để thêm shorcut vào màn hình chính
+	<link label="Zebra" url="https://www.zebra.com" package="org.chromium.chrome" activity="com.google.android.apps.chrome.Main" icon="/enterprise/usr/ZebraLogo.jpg" />
+-->
     <application label="Máy tính" package="com.android.calculator2" activity="com.android.calculator2.Calculator"/>
     <application label="Velocity" package="com.wavelink.velocity" activity="com.wavelink.velocity.te.SplashActivity"/>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
     <application label="StageNow" package="com.symbol.tool.stagenow" activity="com.symbol.tool.stagenow.main.HomeScreen"/>
 	<application label="SmartClock" package="com.congit.simplewebbrowser" activity="com.congit.simplewebbrowser.MainActivity"/>
-  </applications>
+</applications>
+	
   <tools>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
   </tools>
