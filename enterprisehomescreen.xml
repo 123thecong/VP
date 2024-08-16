@@ -4,9 +4,9 @@
   </kiosk>
 
 <applications>
-    <!-- Phần này để thêm shorcut vào màn hình chính
-	<link label="Zebra" url="https://www.zebra.com" package="org.chromium.chrome" activity="com.google.android.apps.chrome.Main" icon="/enterprise/usr/ZebraLogo.jpg" />
--->
+    <!-- Phần này để thêm shorcut vào màn hình chính-->
+	<link label="NGW" url="https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html" package="org.chromium.chrome" activity="com.google.android.apps.chrome.Main" icon="/enterprise/usr/ZebraLogo.jpg" />
+
     <application label="Máy tính" package="com.android.calculator2" activity="com.android.calculator2.Calculator"/>
     <application label="Velocity" package="com.wavelink.velocity" activity="com.wavelink.velocity.te.SplashActivity"/>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
