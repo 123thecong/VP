@@ -17,7 +17,7 @@
   <tools>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
   </tools>
-	<!--PHẦN NÀY LÀ MẬT KHẨU EHS -->
+	<!--PHẦN NÀY LÀ MẬT KHẨU EHS 250691-->
   <passwords>
     <admin attempts="1">FUK4o6cHW01PsHS9fkDHxlefd6KjCpP2fOa+CwiX5q4=kklSsjewEL9IbGaif1WFlsdZxn+w8Vvwn+zfmlQQVZA=</admin>
   </passwords>
