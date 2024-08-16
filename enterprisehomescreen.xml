@@ -3,8 +3,7 @@
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
   </kiosk>
   <applications>
-	<link label="chromium" pinned_activity="org.chromium.chrome" /> 
-	  <link label="chrome" pinned_activity="com.android.chrome" /> 
+
     <application label="Máy tính" package="com.android.calculator2" activity="com.android.calculator2.Calculator"/>
     <application label="Velocity" package="com.wavelink.velocity" activity="com.wavelink.velocity.te.SplashActivity"/>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
