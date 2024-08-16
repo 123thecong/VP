@@ -4,6 +4,7 @@
   </kiosk>
 	<applications>
 	<link label="chromium" pinned_activity="org.chromium.chrome"/>
+		<link label="chromium" pinned_activity="com.google.android.apps.chrome.Main"/>
 	</applications>
   <applications>
     
@@ -42,7 +43,7 @@
     <icon_label_background_color>#00FFFFFF</icon_label_background_color>
     <keyguard_camera_disabled>1</keyguard_camera_disabled>
     <kiosk_mode_enabled>0</kiosk_mode_enabled>
-    <title>DBS.Dell-V1.2024</title>
+    <title>DBS.Dell-V2.2024</title>
     <apps_disabled>
       <application package="com.android.settings"/>
       <application package="com.google.android.googlequicksearchbox"/>
