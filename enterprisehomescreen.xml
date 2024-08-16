@@ -5,7 +5,9 @@
 	<applications>
 	<link label="chromium" pinned_activity="org.chromium.chrome"/>
 		<link label="chromium" pinned_activity="com.google.android.apps.chrome.Main"/>
+		  <link label="Zebra" url="https://www.zebra.com" package="org.chromium.chrome" activity="com.google.android.apps.chrome.Main" icon="/enterprise/usr/ZebraLogo.jpg" />
 	</applications>
+
   <applications>
     
     <application label="Máy tính" package="com.android.calculator2" activity="com.android.calculator2.Calculator"/>
