@@ -16,6 +16,7 @@
 	
   <tools>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
+    <application label="StageNow" package="com.symbol.tool.stagenow" activity="com.symbol.tool.stagenow.main.HomeScreen"/>  
   </tools>
 	<!--PHẦN NÀY LÀ MẬT KHẨU EHS 250691-->
   <passwords>
