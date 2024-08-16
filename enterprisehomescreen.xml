@@ -43,7 +43,7 @@
     <icon_label_background_color>#00FFFFFF</icon_label_background_color>
     <keyguard_camera_disabled>1</keyguard_camera_disabled>
     <kiosk_mode_enabled>0</kiosk_mode_enabled>
-    <title>DBS.Dell-V2.2024</title>
+    <title>DBS.Dell-T8.2024</title>
     <apps_disabled>
       <application package="com.android.settings"/>
       <application package="com.google.android.googlequicksearchbox"/>
