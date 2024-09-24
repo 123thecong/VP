@@ -118,11 +118,11 @@ class MainActivity : AppCompatActivity() {
                     }
                     URLUtil.isNetworkUrl(loadingUrl) -> {
                         // Nếu URL hợp lệ, tải URL vào WebView
-                        webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
+                        webView.loadUrl("https://smartsuite.ap.signintra.com/smmatweb/login")
                     }
                     else -> {
                         // Thêm http:// vào phía trước URL không hợp lệ
-                        webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
+                        webView.loadUrl("https://smartsuite.ap.signintra.com/smmatweb/login")
                     }
                 }
             }
@@ -208,6 +208,6 @@ class MainActivity : AppCompatActivity() {
 
 //Trang mặc định
     companion object {
-        private const val DEFAULT_URL = "https://smartsuite.ap.signintra.com/matrix_re/change_workcode"
+        private const val DEFAULT_URL = "https://smartsuite.ap.signintra.com/smmatweb/login"
     }
 }
