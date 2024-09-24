@@ -1,5 +1,6 @@
 package com.congit.simplewebbrowser
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         bindViews()
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private fun initViews() {
         // Để tải một ứng dụng không phải là trình duyệt ứng dụng mặc định, bạn phải ghi đè hành vi của chế độ xem web.
         // Mã này được yêu cầu để mở trang web mong muốn trong khu vực xem web được chỉ định.
@@ -80,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    @SuppressLint("SimpleDateFormat")
     private fun bindViews() {
         val simpleDateFormat = SimpleDateFormat("MM/yyyy")
         val simpleDateFormat2 = SimpleDateFormat("mm")
@@ -126,7 +129,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            true
+
 
 
                 // Tải URL cố định vào WebView
@@ -208,6 +211,6 @@ class MainActivity : AppCompatActivity() {
 
 //Trang mặc định
     companion object {
-        private const val DEFAULT_URL = "https://smartsuite.ap.signintra.com/smmatweb/login"
+        private const val DEFAULT_URL = "https://google.com"
     }
 }
