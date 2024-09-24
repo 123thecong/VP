@@ -211,6 +211,6 @@ class MainActivity : AppCompatActivity() {
 
 //Trang mặc định
     companion object {
-        private const val DEFAULT_URL = "https://google.com"
+        private const val DEFAULT_URL = "https://smartsuite.ap.signintra.com/smmatweb/login"
     }
 }
