@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.http.SslError
 import android.os.Bundle
+import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.webkit.*
 import android.widget.EditText
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         WebView.setWebContentsDebuggingEnabled(true)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         initViews()
         bindViews()
     }
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 allowContentAccess = true
                 setSupportMultipleWindows(true)
                 cacheMode = WebSettings.LOAD_DEFAULT
-                userAgentString = WebSettings.getDefaultUserAgent(this@MainActivity)
+                userAgentString = "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.210 Mobile Safari/537.36"
             }
             loadUrl(DEFAULT_URL)
         }
@@ -88,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
-            handler?.proceed() // Bỏ qua lỗi SSL mà không hiển thị cảnh báo
+            handler?.proceed()
         }
 
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
