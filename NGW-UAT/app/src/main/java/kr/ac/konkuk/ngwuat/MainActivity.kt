@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        WebView.setWebContentsDebuggingEnabled(true)
         initViews()
         bindViews()
     }
@@ -38,7 +38,17 @@ class MainActivity : AppCompatActivity() {
         webView.apply {
             webViewClient = WebViewClient()
             webChromeClient = WebChromeClient()
-            settings.javaScriptEnabled = true
+            settings.apply {
+                javaScriptEnabled = true
+                domStorageEnabled = true
+                databaseEnabled = true
+                mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                allowFileAccess = true
+                allowContentAccess = true
+                setSupportMultipleWindows(true)
+                cacheMode = WebSettings.LOAD_DEFAULT
+                userAgentString = WebSettings.getDefaultUserAgent(this@MainActivity)
+            }
             loadUrl(DEFAULT_URL)
         }
     }
@@ -53,31 +63,13 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SimpleDateFormat")
     private fun bindViews() {
-        val simpleDateFormat = SimpleDateFormat("MM/yyyy")
-        val simpleDateFormat2 = SimpleDateFormat("mm")
-        val pass1 = "caidat:" + simpleDateFormat.format(Date()) + " " + simpleDateFormat2.format(Date())
-        val pass2 = "250691"
-        val pass3 = "matkhau"
-        val pass4 = "vaogoogle"
-        val pass5 = "rf.congit.online"
-        val pass6 = "stagenow"
-        val pass7 = "ngw"
-
         addressBar.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val loadingUrl = v.text.toString()
-                when {
-                    loadingUrl.equals(pass1, ignoreCase = true) ||
-                            loadingUrl.equals(pass2, ignoreCase = true) ||
-                            loadingUrl.equals(pass3, ignoreCase = true) -> openDeviceSettings()
-
-                    loadingUrl.equals(pass4, ignoreCase = true) -> webView.loadUrl("http://google.com")
-                    loadingUrl.equals(pass5, ignoreCase = true) -> webView.loadUrl("http://rf.congit.cloud")
-                    loadingUrl.equals(pass6, ignoreCase = true) -> stagenow()
-                    loadingUrl.equals(pass7, ignoreCase = true) -> webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
-
-                    URLUtil.isNetworkUrl(loadingUrl) -> webView.loadUrl(loadingUrl)
-                    else -> webView.loadUrl(DEFAULT_URL)
+                if (URLUtil.isNetworkUrl(loadingUrl)) {
+                    webView.loadUrl(loadingUrl)
+                } else {
+                    webView.loadUrl(DEFAULT_URL)
                 }
             }
             false
@@ -96,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
-            handler?.proceed() // Bỏ qua lỗi SSL (cẩn thận khi dùng trong môi trường production)
+            handler?.proceed() // Bỏ qua lỗi SSL mà không hiển thị cảnh báo
         }
 
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
