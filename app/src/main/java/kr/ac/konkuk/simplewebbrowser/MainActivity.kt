@@ -1,4 +1,4 @@
-package com.congit.ngw
+package com.congit.ngwuat
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     loadingUrl.equals(pass7, ignoreCase = true) -> {
                         // Nếu người dùng nhập pass giống thì tải URL rf.congit.online
-                        webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
+                        webView.loadUrl("https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html")
                     }
                     URLUtil.isNetworkUrl(loadingUrl) -> {
                         // Nếu URL hợp lệ, tải URL vào WebView
@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 // Tải URL cố định vào WebView
-                //webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
+                //webView.loadUrl("https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html")
 
 
 
@@ -211,6 +211,6 @@ class MainActivity : AppCompatActivity() {
 
 //Trang mặc định
     companion object {
-        private const val DEFAULT_URL = "https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html"
+        private const val DEFAULT_URL = "https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html"
     }
 }
