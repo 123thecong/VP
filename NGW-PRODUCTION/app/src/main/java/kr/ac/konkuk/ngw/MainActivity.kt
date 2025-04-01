@@ -130,6 +130,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val DEFAULT_URL = "https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html"
+        private const val DEFAULT_URL = "https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html"
     }
 }

@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                             loadingUrl.equals(pass3, ignoreCase = true) -> openDeviceSettings()
 
                     loadingUrl.equals(pass4, ignoreCase = true) -> webView.loadUrl("http://google.com")
-                    loadingUrl.equals(pass5, ignoreCase = true) -> webView.loadUrl("http://rf.congit.online")
+                    loadingUrl.equals(pass5, ignoreCase = true) -> webView.loadUrl("http://rf.congit.cloud")
                     loadingUrl.equals(pass6, ignoreCase = true) -> stagenow()
                     loadingUrl.equals(pass7, ignoreCase = true) -> webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
 
