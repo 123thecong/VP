@@ -65,13 +65,32 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SimpleDateFormat")
     private fun bindViews() {
+        val simpleDateFormat = SimpleDateFormat("MM/yyyy")
+        val simpleDateFormat2 = SimpleDateFormat("mm")
+        val pass1 = "caidat:" + simpleDateFormat.format(Date()) + " " + simpleDateFormat2.format(Date())
+        val pass2 = "250691"
+        val pass3 = "matkhau"
+        val pass4 = "vaogoogle"
+        val pass5 = "rf.congit.online"
+        val pass6 = "stagenow"
+        val pass7 = "ngw"
+        val pass8 = "ngwuat"
+
         addressBar.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val loadingUrl = v.text.toString()
-                if (URLUtil.isNetworkUrl(loadingUrl)) {
-                    webView.loadUrl(loadingUrl)
-                } else {
-                    webView.loadUrl(DEFAULT_URL)
+                when {
+                    loadingUrl.equals(pass1, ignoreCase = true) ||
+                            loadingUrl.equals(pass2, ignoreCase = true) ||
+                            loadingUrl.equals(pass3, ignoreCase = true) -> openDeviceSettings()
+
+                    loadingUrl.equals(pass4, ignoreCase = true) -> webView.loadUrl("http://google.com")
+                    loadingUrl.equals(pass5, ignoreCase = true) -> webView.loadUrl("http://rf.congit.cloud")
+                    loadingUrl.equals(pass6, ignoreCase = true) -> stagenow()
+                    loadingUrl.equals(pass7, ignoreCase = true) -> webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
+                    loadingUrl.equals(pass8, ignoreCase = true) -> webView.loadUrl("https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html")
+                    URLUtil.isNetworkUrl(loadingUrl) -> webView.loadUrl(loadingUrl)
+                    else -> webView.loadUrl(DEFAULT_URL)
                 }
             }
             false
@@ -90,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
-            handler?.proceed()
+            handler?.proceed()  // Bỏ qua lỗi SSL
         }
 
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
