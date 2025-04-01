@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.http.SslError
 import android.os.Bundle
+import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.webkit.*
 import android.widget.EditText
@@ -28,7 +29,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        WebView.setWebContentsDebuggingEnabled(true)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         initViews()
         bindViews()
     }
@@ -38,7 +40,17 @@ class MainActivity : AppCompatActivity() {
         webView.apply {
             webViewClient = WebViewClient()
             webChromeClient = WebChromeClient()
-            settings.javaScriptEnabled = true
+            settings.apply {
+                javaScriptEnabled = true
+                domStorageEnabled = true
+                databaseEnabled = true
+                mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                allowFileAccess = true
+                allowContentAccess = true
+                setSupportMultipleWindows(true)
+                cacheMode = WebSettings.LOAD_DEFAULT
+                userAgentString = "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.210 Mobile Safari/537.36"
+            }
             loadUrl(DEFAULT_URL)
         }
     }
@@ -63,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         val pass6 = "stagenow"
         val pass7 = "ngw"
         val pass8 = "ngwuat"
+
         addressBar.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val loadingUrl = v.text.toString()
@@ -96,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
-            handler?.proceed() // Bỏ qua lỗi SSL (cẩn thận khi dùng trong môi trường production)
+            handler?.proceed()  // Bỏ qua lỗi SSL
         }
 
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
