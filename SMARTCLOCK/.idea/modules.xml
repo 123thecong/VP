@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleWebBrowser.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleWebBrowser.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleWebBrowser.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleWebBrowser.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SMARTCLOCK.iml" filepath="$PROJECT_DIR$/.idea/modules/SMARTCLOCK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SMARTCLOCK.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SMARTCLOCK.app.iml" />
     </modules>
   </component>
 </project>
