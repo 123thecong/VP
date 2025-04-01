@@ -1,4 +1,4 @@
-package com.congit.simplewebbrowser
+package com.congit.ngw
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 // Tải URL cố định vào WebView
-                //webView.loadUrl("https://smartsuite.ap.signintra.com/matrix_re/change_workcode")
+                //webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
 
 
 
@@ -211,6 +211,6 @@ class MainActivity : AppCompatActivity() {
 
 //Trang mặc định
     companion object {
-        private const val DEFAULT_URL = "https://smartsuite.ap.signintra.com/smmatweb/login"
+        private const val DEFAULT_URL = "https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html"
     }
 }
