@@ -126,11 +126,11 @@ class MainActivity : AppCompatActivity() {
                     }
                     URLUtil.isNetworkUrl(loadingUrl) -> {
                         // Nếu URL hợp lệ, tải URL vào WebView
-                        webView.loadUrl("https://smartsuite.ap.signintra.com/smmatweb/login")
+                        webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
                     }
                     else -> {
                         // Thêm http:// vào phía trước URL không hợp lệ
-                        webView.loadUrl("https://smartsuite.ap.signintra.com/smmatweb/login")
+                        webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
                     }
                 }
             }

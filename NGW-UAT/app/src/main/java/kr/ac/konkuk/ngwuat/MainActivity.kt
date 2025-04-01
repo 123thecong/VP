@@ -117,15 +117,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     loadingUrl.equals(pass7, ignoreCase = true) -> {
                         // Nếu người dùng nhập pass giống thì tải URL rf.congit.online
-                        webView.loadUrl("https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html")
+                        webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
                     }
                     URLUtil.isNetworkUrl(loadingUrl) -> {
                         // Nếu URL hợp lệ, tải URL vào WebView
-                        webView.loadUrl("https://smartsuite.ap.signintra.com/smmatweb/login")
+                        webView.loadUrl("https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html")
                     }
                     else -> {
                         // Thêm http:// vào phía trước URL không hợp lệ
-                        webView.loadUrl("https://smartsuite.ap.signintra.com/smmatweb/login")
+                        webView.loadUrl("https://rhosceappuat01.ap.signintra.com/uat01/sce/mobile-web-client/inforMetaClient.html")
                     }
                 }
             }
