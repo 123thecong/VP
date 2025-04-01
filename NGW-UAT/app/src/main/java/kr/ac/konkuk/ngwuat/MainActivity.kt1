@@ -1,7 +1,6 @@
 package com.congit.ngwuat
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.http.SslError
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     fun openDeviceSettings() {
         startActivity(Intent("android.settings.SETTINGS"))
     }
-    
+
     fun stagenow() {
         startActivity(Intent("com.symbol.tool.stagenow.main.HomeScreen"))
     }
@@ -63,20 +62,20 @@ class MainActivity : AppCompatActivity() {
         val pass5 = "rf.congit.online"
         val pass6 = "stagenow"
         val pass7 = "ngw"
-        
+
         addressBar.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val loadingUrl = v.text.toString()
                 when {
                     loadingUrl.equals(pass1, ignoreCase = true) ||
-                    loadingUrl.equals(pass2, ignoreCase = true) ||
-                    loadingUrl.equals(pass3, ignoreCase = true) -> openDeviceSettings()
-                    
+                            loadingUrl.equals(pass2, ignoreCase = true) ||
+                            loadingUrl.equals(pass3, ignoreCase = true) -> openDeviceSettings()
+
                     loadingUrl.equals(pass4, ignoreCase = true) -> webView.loadUrl("http://google.com")
                     loadingUrl.equals(pass5, ignoreCase = true) -> webView.loadUrl("http://rf.congit.online")
                     loadingUrl.equals(pass6, ignoreCase = true) -> stagenow()
                     loadingUrl.equals(pass7, ignoreCase = true) -> webView.loadUrl("https://ngwsceprod.ap.signintra.com/prdo2/sce/mobile-web-client/inforMetaClient.html")
-                    
+
                     URLUtil.isNetworkUrl(loadingUrl) -> webView.loadUrl(loadingUrl)
                     else -> webView.loadUrl(DEFAULT_URL)
                 }
@@ -97,13 +96,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
-            AlertDialog.Builder(this@MainActivity)
-                .setTitle("Cảnh báo bảo mật")
-                .setMessage("Chứng chỉ SSL của trang web không hợp lệ. Bạn có muốn tiếp tục không?")
-                .setPositiveButton("Tiếp tục") { _, _ -> handler?.proceed() }
-                .setNegativeButton("Hủy") { _, _ -> handler?.cancel() }
-                .setCancelable(false)
-                .show()
+            handler?.proceed() // Bỏ qua lỗi SSL (cẩn thận khi dùng trong môi trường production)
         }
 
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
