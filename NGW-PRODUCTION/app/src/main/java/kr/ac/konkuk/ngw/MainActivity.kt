@@ -165,6 +165,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+        override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
+            handler?.proceed() // Bỏ qua lỗi SSL (cẩn thận khi dùng trong môi trường production)
+        }
     // Nếu không đính kèm bên trong, bạn sẽ không thể truy cập các thuộc tính của hoạt động chính -> Bạn sẽ không thể truy cập RefreshLayout
     //Bằng cách thêm //inner, việc truy cập vào lớp cha sẽ trở nên khả thi.
     // Được sử dụng để hiển thị chế độ xem web
