@@ -8,6 +8,7 @@
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
     <application label="StageNow" package="com.symbol.tool.stagenow" activity="com.symbol.tool.stagenow.main.HomeScreen"/>
 	<application label="SmartClock" package="com.congit.simplewebbrowser" activity="com.congit.simplewebbrowser.MainActivity"/>
+	<application label="SmartClock" package="com.congit.SmartClock" activity="com.congit.SmartClock.MainActivity"/>
 	<application label="NGW-UAT" package="com.congit.ngwuat" activity="com.congit.ngwuat.MainActivity"/>
 	<application label="NGW" package="com.congit.ngw" activity="com.congit.ngw.MainActivity"/>
   </applications>
